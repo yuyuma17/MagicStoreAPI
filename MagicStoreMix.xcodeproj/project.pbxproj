@@ -14,7 +14,7 @@
 		56472FDC2372C52900CD9C2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56472FDB2372C52900CD9C2B /* Assets.xcassets */; };
 		56472FDF2372C52900CD9C2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56472FDD2372C52900CD9C2B /* LaunchScreen.storyboard */; };
 		B3C044352372C839002BC59A /* MagicShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C044342372C839002BC59A /* MagicShop.storyboard */; };
-		B3C044372372C891002BC59A /* MagicShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044362372C891002BC59A /* MagicShopViewController.swift */; };
+		B3C044372372C891002BC59A /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044362372C891002BC59A /* ShopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		56472FDE2372C52900CD9C2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56472FE02372C52900CD9C2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C044342372C839002BC59A /* MagicShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MagicShop.storyboard; sourceTree = "<group>"; };
-		B3C044362372C891002BC59A /* MagicShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicShopViewController.swift; sourceTree = "<group>"; };
+		B3C044362372C891002BC59A /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				56472FDD2372C52900CD9C2B /* LaunchScreen.storyboard */,
 				56472FE02372C52900CD9C2B /* Info.plist */,
 				B3C044342372C839002BC59A /* MagicShop.storyboard */,
-				B3C044362372C891002BC59A /* MagicShopViewController.swift */,
+				B3C044362372C891002BC59A /* ShopViewController.swift */,
 			);
 			path = MagicStoreMix;
 			sourceTree = "<group>";
@@ -147,7 +147,7 @@
 			files = (
 				56472FD72372C52800CD9C2B /* ViewController.swift in Sources */,
 				56472FD32372C52800CD9C2B /* AppDelegate.swift in Sources */,
-				B3C044372372C891002BC59A /* MagicShopViewController.swift in Sources */,
+				B3C044372372C891002BC59A /* ShopViewController.swift in Sources */,
 				56472FD52372C52800CD9C2B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

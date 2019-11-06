@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="wfs-Eg-vmm">
             <objects>
-                <viewController id="n5h-xs-HaH" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="n5h-xs-HaH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xbS-dv-7lX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
