@@ -16,6 +16,10 @@ struct User: Codable {
 
 class UserData {
     var user = User(name: "Jes", totalMoney: 2000, purchased: [MagicBook]())
+    
+//    func () -> [Bool] {
+//    
+//    }
 }
 
 class UserPersist {
