@@ -11,11 +11,23 @@ import Foundation
 struct User: Codable {
     var name: String
     var totalMoney: Int
-    var purchased: [MagicBook]
+    var purchased: Set<Int>
+    
+    mutating func purchase(book: MagicBook) -> Bool {
+        switch totalMoney > book.price && !purchased.contains(book.id) {
+        case false:
+            return false
+        case true:
+            totalMoney -= book.price
+            purchased.insert(book.id)
+            return true
+        }
+    }
 }
 
 class UserData {
-    var user = User(name: "Jes", totalMoney: 2000, purchased: [MagicBook]())
+    var user = User(name: "Jes", totalMoney: 2000, purchased: Set<Int>())
+
 }
 
 class UserPersist {
