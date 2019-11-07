@@ -16,6 +16,8 @@
 		56472FDA2372C52800CD9C2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56472FD82372C52800CD9C2B /* Main.storyboard */; };
 		56472FDC2372C52900CD9C2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56472FDB2372C52900CD9C2B /* Assets.xcassets */; };
 		56472FDF2372C52900CD9C2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56472FDD2372C52900CD9C2B /* LaunchScreen.storyboard */; };
+		56472FF42373C7A100CD9C2B /* MagicBookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56472FF22373C7A100CD9C2B /* MagicBookList.swift */; };
+		56472FF52373C7A100CD9C2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56472FF32373C7A100CD9C2B /* User.swift */; };
 		B3C044352372C839002BC59A /* MagicShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C044342372C839002BC59A /* MagicShop.storyboard */; };
 		B3C044372372C891002BC59A /* MagicShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044362372C891002BC59A /* MagicShopViewController.swift */; };
 		B3C044392373B905002BC59A /* ButtonProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044382373B905002BC59A /* ButtonProperties.swift */; };
@@ -33,6 +35,8 @@
 		56472FDB2372C52900CD9C2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56472FDE2372C52900CD9C2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56472FE02372C52900CD9C2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56472FF22373C7A100CD9C2B /* MagicBookList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicBookList.swift; sourceTree = "<group>"; };
+		56472FF32373C7A100CD9C2B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B3C044342372C839002BC59A /* MagicShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MagicShop.storyboard; sourceTree = "<group>"; };
 		B3C044362372C891002BC59A /* MagicShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicShopViewController.swift; sourceTree = "<group>"; };
 		B3C044382373B905002BC59A /* ButtonProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProperties.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 		B38A5D022373C40B00200DC8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				56472FF22373C7A100CD9C2B /* MagicBookList.swift */,
+				56472FF32373C7A100CD9C2B /* User.swift */,
 				B3C044382373B905002BC59A /* ButtonProperties.swift */,
 			);
 			path = Model;
@@ -183,11 +189,13 @@
 			files = (
 				B3C044392373B905002BC59A /* ButtonProperties.swift in Sources */,
 				56472FD72372C52800CD9C2B /* HomeViewController.swift in Sources */,
+				56472FF42373C7A100CD9C2B /* MagicBookList.swift in Sources */,
 				162B84A02372CCAC00316E63 /* MyOwnViewController.swift in Sources */,
 				56472FD32372C52800CD9C2B /* AppDelegate.swift in Sources */,
 				B3C044372372C891002BC59A /* MagicShopViewController.swift in Sources */,
 				56472FD52372C52800CD9C2B /* SceneDelegate.swift in Sources */,
 				162B84A22372D98100316E63 /* MyOwnCollectionViewCell.swift in Sources */,
+				56472FF52373C7A100CD9C2B /* User.swift in Sources */,
 				162B84A42372D9CC00316E63 /* MyOwnCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
