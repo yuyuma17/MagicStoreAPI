@@ -13,14 +13,20 @@ class MagicShopViewController: UIViewController {
     @IBOutlet var changeStateButton: [UIButton]!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for button in changeStateButton {
-            button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        }
+        settingStateButtonProperties()
+        navigationController?.navigationBar.tintColor = .white
         
     }
     
+    fileprivate func settingStateButtonProperties() {
+        for button in changeStateButton {
+            button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+            setProperties(button: button, configSetting: .stateButton)
+        }
+    }
 
 }
