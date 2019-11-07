@@ -86,8 +86,8 @@
 		B38A5D022373C40B00200DC8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				56472FF22373C7A100CD9C2B /* MagicBookList.swift */,
 				56472FF32373C7A100CD9C2B /* User.swift */,
+				56472FF22373C7A100CD9C2B /* MagicBookList.swift */,
 				B3C044382373B905002BC59A /* ButtonProperties.swift */,
 			);
 			path = Model;
