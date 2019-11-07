@@ -20,7 +20,7 @@
 		56472FF52373C7A100CD9C2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56472FF32373C7A100CD9C2B /* User.swift */; };
 		B3C044352372C839002BC59A /* MagicShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C044342372C839002BC59A /* MagicShop.storyboard */; };
 		B3C044372372C891002BC59A /* MagicShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044362372C891002BC59A /* MagicShopViewController.swift */; };
-		B3C044392373B905002BC59A /* ButtonProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044382373B905002BC59A /* ButtonProperties.swift */; };
+		B3C044392373B905002BC59A /* BorderProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044382373B905002BC59A /* BorderProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		56472FF32373C7A100CD9C2B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B3C044342372C839002BC59A /* MagicShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MagicShop.storyboard; sourceTree = "<group>"; };
 		B3C044362372C891002BC59A /* MagicShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicShopViewController.swift; sourceTree = "<group>"; };
-		B3C044382373B905002BC59A /* ButtonProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProperties.swift; sourceTree = "<group>"; };
+		B3C044382373B905002BC59A /* BorderProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 			children = (
 				56472FF22373C7A100CD9C2B /* MagicBookList.swift */,
 				56472FF32373C7A100CD9C2B /* User.swift */,
-				B3C044382373B905002BC59A /* ButtonProperties.swift */,
+				B3C044382373B905002BC59A /* BorderProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C044392373B905002BC59A /* ButtonProperties.swift in Sources */,
+				B3C044392373B905002BC59A /* BorderProperties.swift in Sources */,
 				56472FD72372C52800CD9C2B /* HomeViewController.swift in Sources */,
 				56472FF42373C7A100CD9C2B /* MagicBookList.swift in Sources */,
 				162B84A02372CCAC00316E63 /* MyOwnViewController.swift in Sources */,
