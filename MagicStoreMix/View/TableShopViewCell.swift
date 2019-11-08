@@ -19,8 +19,10 @@ class TableShopViewCell: UICollectionViewCell {
 
 extension TableShopViewCell {
     
-    func setShopData() {
-        
+    func setShopData(levelMode: ShopViewState.levelMode, indexPath: IndexPath) {
+//        magicIcon.image = UIImage(named: ShopViewState.shopList[indexPath.row].name)
+//        magicName.text = "\(ShopViewState.shopList[indexPath.row].name)"
+//        magicPrice.text = ShopViewState.shopList[indexPath.row].price
     }
     
 }
