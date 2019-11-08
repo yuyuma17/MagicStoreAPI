@@ -26,7 +26,7 @@ struct User: Codable {
 }
 
 class UserData {
-    var user = User(name: "Jes", totalMoney: 2000, purchased: Set<Int>())
+    var user = User(name: "超級 iOS 協作隊", totalMoney: 2000, purchased: Set<Int>())
 
 }
 
