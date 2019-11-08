@@ -95,8 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				56472FF32373C7A100CD9C2B /* User.swift */,
-				B3C044382373B905002BC59A /* BorderProperties.swift */,
 				B388D8A6237519E4000BC6D2 /* MagicBookList.swift */,
+				B3C044382373B905002BC59A /* BorderProperties.swift */,
 				B317F44923743913004E4FEE /* ShopViewState.swift */,
 			);
 			path = Model;
