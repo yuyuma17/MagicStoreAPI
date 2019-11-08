@@ -18,6 +18,10 @@
 		56472FDF2372C52900CD9C2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56472FDD2372C52900CD9C2B /* LaunchScreen.storyboard */; };
 		56472FF42373C7A100CD9C2B /* MagicBookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56472FF22373C7A100CD9C2B /* MagicBookList.swift */; };
 		56472FF52373C7A100CD9C2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56472FF32373C7A100CD9C2B /* User.swift */; };
+		B317F448237424DF004E4FEE /* MagicShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B317F447237424DF004E4FEE /* MagicShopView.swift */; };
+		B317F44A23743913004E4FEE /* ShopViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B317F44923743913004E4FEE /* ShopViewState.swift */; };
+		B3900EFD237502820040BC95 /* TableShopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3900EFC237502820040BC95 /* TableShopViewCell.swift */; };
+		B3900EFF237502970040BC95 /* CollectionShopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3900EFE237502970040BC95 /* CollectionShopViewCell.swift */; };
 		B3C044352372C839002BC59A /* MagicShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C044342372C839002BC59A /* MagicShop.storyboard */; };
 		B3C044372372C891002BC59A /* MagicShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044362372C891002BC59A /* MagicShopViewController.swift */; };
 		B3C044392373B905002BC59A /* BorderProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044382373B905002BC59A /* BorderProperties.swift */; };
@@ -37,6 +41,10 @@
 		56472FE02372C52900CD9C2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56472FF22373C7A100CD9C2B /* MagicBookList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicBookList.swift; sourceTree = "<group>"; };
 		56472FF32373C7A100CD9C2B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B317F447237424DF004E4FEE /* MagicShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicShopView.swift; sourceTree = "<group>"; };
+		B317F44923743913004E4FEE /* ShopViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewState.swift; sourceTree = "<group>"; };
+		B3900EFC237502820040BC95 /* TableShopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableShopViewCell.swift; sourceTree = "<group>"; };
+		B3900EFE237502970040BC95 /* CollectionShopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionShopViewCell.swift; sourceTree = "<group>"; };
 		B3C044342372C839002BC59A /* MagicShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MagicShop.storyboard; sourceTree = "<group>"; };
 		B3C044362372C891002BC59A /* MagicShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicShopViewController.swift; sourceTree = "<group>"; };
 		B3C044382373B905002BC59A /* BorderProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderProperties.swift; sourceTree = "<group>"; };
@@ -89,6 +97,7 @@
 				56472FF22373C7A100CD9C2B /* MagicBookList.swift */,
 				56472FF32373C7A100CD9C2B /* User.swift */,
 				B3C044382373B905002BC59A /* BorderProperties.swift */,
+				B317F44923743913004E4FEE /* ShopViewState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,7 +109,10 @@
 				56472FD82372C52800CD9C2B /* Main.storyboard */,
 				B3C044342372C839002BC59A /* MagicShop.storyboard */,
 				162B84A12372D98100316E63 /* MyOwnCollectionViewCell.swift */,
+				B317F447237424DF004E4FEE /* MagicShopView.swift */,
 				162B84A32372D9CC00316E63 /* MyOwnCollectionReusableView.swift */,
+				B3900EFC237502820040BC95 /* TableShopViewCell.swift */,
+				B3900EFE237502970040BC95 /* CollectionShopViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,8 +200,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C044392373B905002BC59A /* BorderProperties.swift in Sources */,
+				B3900EFD237502820040BC95 /* TableShopViewCell.swift in Sources */,
 				56472FD72372C52800CD9C2B /* HomeViewController.swift in Sources */,
+				B317F448237424DF004E4FEE /* MagicShopView.swift in Sources */,
 				56472FF42373C7A100CD9C2B /* MagicBookList.swift in Sources */,
+				B317F44A23743913004E4FEE /* ShopViewState.swift in Sources */,
+				B3900EFF237502970040BC95 /* CollectionShopViewCell.swift in Sources */,
 				162B84A02372CCAC00316E63 /* MyOwnViewController.swift in Sources */,
 				56472FD32372C52800CD9C2B /* AppDelegate.swift in Sources */,
 				B3C044372372C891002BC59A /* MagicShopViewController.swift in Sources */,

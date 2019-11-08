@@ -10,26 +10,14 @@ import UIKit
 
 class MagicShopViewController: UIViewController {
 
-    @IBOutlet var changeStateButton: [UIButton]!
-    @IBOutlet var moneyView: UIView!
-    @IBOutlet var userMoney: UILabel!
-    @IBOutlet var magicShopCollectionView: UICollectionView!
+    var magicShopView: MagicShopView { view as! MagicShopView }
+//    private let bookList: MagicBookList = MagicBookList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setDefaultProperties()
+//        magicShopView.setting(mc: self)
+        magicShopView.setDefaultProperties()
         navigationController?.navigationBar.tintColor = .white
-        
-    }
-    
-    fileprivate func setDefaultProperties() {
-        for button in changeStateButton {
-            button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-            setButtonProperties(button: button, configSetting: .stateButton)
-        }
-        moneyView.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        moneyView.layer.borderWidth = 2
         
     }
     
@@ -37,12 +25,34 @@ class MagicShopViewController: UIViewController {
 
 extension MagicShopViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    var shopMode: ShopViewState.shopMode { .table }
+    var tableShopView: TableShopViewCell { view as! TableShopViewCell }
+    var collectionShopView: CollectionShopViewCell { view as! CollectionShopViewCell }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch shopMode {
+        case .table: return CGSize(width: view.frame.width, height: 80)
+        case .collection: return CGSize(width: view.frame.width / 4, height: view.frame.width / 4)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        switch shopMode {
+        case .table:
+            let cellIdentifier = "tableShopView"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
+            tableShopView.setShopData()
+            return cell
+        case .collection:
+            let cellIdentifier = "collectionShopView"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
+            collectionShopView.setShopData()
+            return cell
+        }
     }
     
     

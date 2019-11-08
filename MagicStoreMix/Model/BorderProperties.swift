@@ -21,14 +21,10 @@ struct BorderProperties {
 }
 
 // DI
-func setButtonBorder(button: UIButton, configSetting: BorderProperties) {
-    button.layer.cornerRadius = CGFloat(configSetting.cornerRadius)
-    button.layer.borderColor = configSetting.bordercolor
-    button.layer.borderWidth = CGFloat(configSetting.borderWidth)
-    button.clipsToBounds = true
-}
-
 func setViewBorder(view: UIView, configSetting: BorderProperties) {
+    view.layer.cornerRadius = CGFloat(configSetting.cornerRadius)
     view.layer.borderColor = configSetting.bordercolor
     view.layer.borderWidth = CGFloat(configSetting.borderWidth)
+    view.clipsToBounds = true
 }
+
