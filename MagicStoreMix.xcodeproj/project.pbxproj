@@ -16,7 +16,6 @@
 		56472FDA2372C52800CD9C2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56472FD82372C52800CD9C2B /* Main.storyboard */; };
 		56472FDC2372C52900CD9C2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56472FDB2372C52900CD9C2B /* Assets.xcassets */; };
 		56472FDF2372C52900CD9C2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56472FDD2372C52900CD9C2B /* LaunchScreen.storyboard */; };
-		56472FF42373C7A100CD9C2B /* MagicBookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56472FF22373C7A100CD9C2B /* MagicBookList.swift */; };
 		56472FF52373C7A100CD9C2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56472FF32373C7A100CD9C2B /* User.swift */; };
 		B317F448237424DF004E4FEE /* MagicShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B317F447237424DF004E4FEE /* MagicShopView.swift */; };
 		B317F44A23743913004E4FEE /* ShopViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B317F44923743913004E4FEE /* ShopViewState.swift */; };
@@ -40,7 +39,6 @@
 		56472FDB2372C52900CD9C2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56472FDE2372C52900CD9C2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56472FE02372C52900CD9C2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56472FF22373C7A100CD9C2B /* MagicBookList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicBookList.swift; sourceTree = "<group>"; };
 		56472FF32373C7A100CD9C2B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B317F447237424DF004E4FEE /* MagicShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicShopView.swift; sourceTree = "<group>"; };
 		B317F44923743913004E4FEE /* ShopViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewState.swift; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 			children = (
 				56472FD12372C52800CD9C2B /* MagicStoreMix */,
 				56472FD02372C52800CD9C2B /* Products */,
-				B388D8A523751978000BC6D2 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,20 +91,12 @@
 			path = MagicStoreMix;
 			sourceTree = "<group>";
 		};
-		B388D8A523751978000BC6D2 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				56472FF22373C7A100CD9C2B /* MagicBookList.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		B38A5D022373C40B00200DC8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B388D8A6237519E4000BC6D2 /* MagicBookList.swift */,
 				56472FF32373C7A100CD9C2B /* User.swift */,
 				B3C044382373B905002BC59A /* BorderProperties.swift */,
+				B388D8A6237519E4000BC6D2 /* MagicBookList.swift */,
 				B317F44923743913004E4FEE /* ShopViewState.swift */,
 			);
 			path = Model;
@@ -214,7 +203,6 @@
 				B3900EFD237502820040BC95 /* TableShopViewCell.swift in Sources */,
 				56472FD72372C52800CD9C2B /* HomeViewController.swift in Sources */,
 				B317F448237424DF004E4FEE /* MagicShopView.swift in Sources */,
-				56472FF42373C7A100CD9C2B /* MagicBookList.swift in Sources */,
 				B317F44A23743913004E4FEE /* ShopViewState.swift in Sources */,
 				B3900EFF237502970040BC95 /* CollectionShopViewCell.swift in Sources */,
 				162B84A02372CCAC00316E63 /* MyOwnViewController.swift in Sources */,
