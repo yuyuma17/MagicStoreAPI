@@ -35,7 +35,18 @@ extension MyOwnViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        
+        var numberOfItems: Int!
+        
+        if section == 0 {
+            numberOfItems = MagicBookList().level1.count
+        } else if section == 1 {
+            numberOfItems = MagicBookList().level2.count
+        } else if section == 2 {
+            numberOfItems = MagicBookList().level3.count
+        }
+        
+        return numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -51,7 +62,13 @@ extension MyOwnViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyOwnMagicCell", for: indexPath) as! MyOwnCollectionViewCell
         
-        cell.magicIcon.image = UIImage(named: "保護罩")
+        if indexPath.section == 0 {
+            cell.magicIcon.image = UIImage(named: MagicBookList().level1[indexPath.item].name)
+        } else if indexPath.section == 1 {
+            cell.magicIcon.image = UIImage(named: MagicBookList().level2[indexPath.item].name)
+        } else if indexPath.section == 2 {
+            cell.magicIcon.image = UIImage(named: MagicBookList().level3[indexPath.item].name)
+        }
         
         return cell
     }
