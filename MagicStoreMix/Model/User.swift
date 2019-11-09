@@ -36,6 +36,10 @@ class UserPersist {
         }
     }
     
+    private init() {
+        print("Singleton initialized")
+    }
+    
     private func saveData(user: User) {
 
         // Use PropertyListEncoder to convert Player into Data / NSData

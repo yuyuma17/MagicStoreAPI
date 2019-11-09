@@ -19,8 +19,8 @@ class HomeViewController: UIViewController {
                 print(self.didInput)
             }
             if self.didInput == correctAnswer {
-                UserPersist().user.totalMoney += 100
-                moneyLabel.text = "\(UserPersist().user.totalMoney)"
+                UserPersist.shared.user.totalMoney += 100
+                moneyLabel.text = "\(UserPersist.shared.user.totalMoney)"
             }
         }
     }
@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        moneyLabel.text = "\(UserPersist().user.totalMoney)"
+        moneyLabel.text = "\(UserPersist.shared.user.totalMoney)"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
