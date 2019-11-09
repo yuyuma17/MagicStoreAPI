@@ -10,7 +10,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    var user = UserData().user
     let correctAnswer = [true, true, false, true, true, false, false]
     
     var didInput = [Bool]() {
@@ -20,8 +19,8 @@ class HomeViewController: UIViewController {
                 print(self.didInput)
             }
             if self.didInput == correctAnswer {
-                user.totalMoney += 100
-                moneyLabel.text = "\(user.totalMoney)"
+                UserPersist().user.totalMoney += 100
+                moneyLabel.text = "\(UserPersist().user.totalMoney)"
             }
         }
     }
@@ -32,14 +31,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = UserData().user.name
-        moneyLabel.text = "\(UserPersist.loadData()!.totalMoney)"
+        moneyLabel.text = "\(UserPersist().user.totalMoney)"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        UserPersist.saveData(user: user)
         didInput = [Bool]()
     }
 
