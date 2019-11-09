@@ -13,14 +13,10 @@ struct User: Codable {
     var totalMoney: Int
     var purchased: Set<Int>
     
-    mutating func purchase(book: MagicBook) -> Bool {
-        switch totalMoney > book.price && !purchased.contains(book.id) {
-        case false:
-            return false
-        case true:
+    mutating func purchase(book: MagicBook) {
+        if totalMoney > book.price && !purchased.contains(book.id) {
             totalMoney -= book.price
             purchased.insert(book.id)
-            return true
         }
     }
 }
