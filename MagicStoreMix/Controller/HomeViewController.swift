@@ -10,32 +10,36 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    var userMoney = 2000
+    var user = UserData().user
     let correctAnswer = [true, true, false, true, true, false, false]
     
     var didInput = [Bool]() {
         didSet {
             if self.didInput.count == 8 {
                 self.didInput.removeFirst()
+                print(self.didInput)
             }
             if self.didInput == correctAnswer {
-                userMoney += 100
-                moneyLabel.text = "\(userMoney)"
+                user.totalMoney += 100
+                moneyLabel.text = "\(user.totalMoney)"
             }
         }
     }
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        moneyLabel.text = "\(userMoney)"
+        nameLabel.text = UserData().user.name
+        moneyLabel.text = "\(UserPersist.loadData()!.totalMoney)"
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
+        UserPersist.saveData(user: user)
         didInput = [Bool]()
     }
 

@@ -10,13 +10,14 @@ import UIKit
 
 struct BorderProperties {
     
-    static let homePageButton = BorderProperties(cornerRadius: 10, borderWidth: 2.0)
+    static let homePageButton = BorderProperties(cornerRadius: 10, borderWidth: 2)
     static let purchaseButton = BorderProperties(cornerRadius: 10, borderWidth: 0.5)
-    static let viewBorder = BorderProperties(borderWidth: 2.0)
+    static let mainViewBorder = BorderProperties(borderWidth: 4)
+    static let viewBorder = BorderProperties(borderWidth: 2)
     
-    var cornerRadius: Double = 0.0
+    var cornerRadius: Double = 0
     var bordercolor: CGColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-    var borderWidth: Double = 0.0
+    var borderWidth: Double = 0
     
 }
 

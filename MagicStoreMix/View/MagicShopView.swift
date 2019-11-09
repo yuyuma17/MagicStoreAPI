@@ -16,21 +16,29 @@ class MagicShopView: UIView {
     @IBOutlet private var moneyView: UIView!
     @IBOutlet private var userMoney: UILabel!
     @IBOutlet private var magicShopCollectionView: UICollectionView!
+    
 }
 
 extension MagicShopView {
-
+    
     func setDefaultProperties() {
         for button in changeStateButton {
-            button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            button.contentEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
             setViewBorder(view: button, configSetting: .viewBorder)
+            
         }
+        setViewBorder(view: self, configSetting: .mainViewBorder)
         setViewBorder(view: moneyView, configSetting: .viewBorder)
         setViewBorder(view: magicShopCollectionView, configSetting: .viewBorder)
-        
     }
+    
+    func setUserMoney() {
+//        userMoney.text = "\(UserPersist.loadData()!.totalMoney)"
+    }
+    
 //    func setting(mc: MagicShopViewController) {
 //        self.mc = mc
 //    }
+    
 
 }
