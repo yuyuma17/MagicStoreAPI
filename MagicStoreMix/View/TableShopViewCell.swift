@@ -10,6 +10,8 @@ import UIKit
 
 class TableShopViewCell: UICollectionViewCell {
     
+    private let userPersist = UserPersist.shared
+    
     @IBOutlet private var magicIcon: UIImageView!
     @IBOutlet private var magicName: UILabel!
     @IBOutlet private var magicPrice: UILabel!
@@ -28,6 +30,10 @@ extension TableShopViewCell {
         magicIcon.image = UIImage(named: shopList[indexPath.row].name)
         magicName.text = "\(shopList[indexPath.row].name)"
         magicPrice.text = "$ \(shopList[indexPath.row].price)"
+    }
+    
+    func showSoldOutView(_ indexPath: IndexPath) {
+        soldOutView.isHidden = userPersist.user.purchased.contains(indexPath.row) ? false : true
     }
     
 }

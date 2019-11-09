@@ -30,8 +30,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        moneyLabel.text = "\(UserPersist.shared.user.totalMoney)"
+        moneyLabel.text = "$ \(UserPersist.shared.user.totalMoney)"
     }
     
     override func viewWillDisappear(_ animated: Bool) {

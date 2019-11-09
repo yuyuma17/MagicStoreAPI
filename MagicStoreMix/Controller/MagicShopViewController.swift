@@ -44,11 +44,13 @@ extension MagicShopViewController: UICollectionViewDataSource, UICollectionViewD
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! TableShopViewCell
             cell.setDefaultProperties()
             cell.setShopData(shopMode: shopMode, levelMode: levelMode, indexPath: indexPath)
+            cell.showSoldOutView(indexPath)
             return cell
         case .collection:
             let cellIdentifier = "collectionShopView"
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CollectionShopViewCell
             cell.setShopData(shopMode: shopMode, levelMode: levelMode, indexPath: indexPath)
+            cell.showSoldOutView(indexPath)
             return cell
         }
     }

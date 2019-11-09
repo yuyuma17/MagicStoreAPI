@@ -10,6 +10,8 @@ import UIKit
 
 class CollectionShopViewCell: UICollectionViewCell {
     
+    private let userPersist = UserPersist.shared
+    
     @IBOutlet private var magicIcon: UIImageView!
     @IBOutlet private var soldOutView: UIView!
     
@@ -20,6 +22,10 @@ extension CollectionShopViewCell {
     func setShopData(shopMode: ShopViewState.shopMode, levelMode: ShopViewState.levelMode, indexPath: IndexPath) {
         let shopList = ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList
         magicIcon.image = UIImage(named: shopList[indexPath.row].name)
+    }
+    
+    func showSoldOutView(_ indexPath: IndexPath) {
+        soldOutView.isHidden = userPersist.user.purchased.contains(indexPath.row) ? false : true
     }
     
 }

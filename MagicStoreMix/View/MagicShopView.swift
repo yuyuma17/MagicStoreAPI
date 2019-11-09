@@ -83,10 +83,12 @@ extension MagicShopView {
         if !userPersist.user.purchased.contains(indexPath.row) {
             if userPersist.user.totalMoney >= ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList[indexPath.row].price {
                 self.addSubview(purchaseView)
+                purchaseView.perpare(mv: self)
                 purchaseView.setData(shopMode: shopMode, levelMode: levelMode, indexPath: indexPath)
             } else {
                 self.addSubview(tauntingView)
             }
         }
+        
     }
 }

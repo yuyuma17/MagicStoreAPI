@@ -11,6 +11,8 @@ import UIKit
 class PurchaseView: UIView {
 
     private weak var mv: MagicShopView?
+    private let userPersist = UserPersist.shared
+    private var magicBook: MagicBook?
     
     @IBOutlet var magicIcon: UIImageView!
     @IBOutlet var magicPrice: UILabel!
@@ -23,7 +25,9 @@ class PurchaseView: UIView {
     }
     
     @IBAction func tapToPurchase(_ sender: UIButton) {
+        userPersist.user.purchase(book: magicBook!)
         self.removeFromSuperview()
+        mv?.setUserMoney()
     }
     @IBAction func tapToCancelPurchase(_ sender: UIButton) {
         self.removeFromSuperview()
@@ -33,8 +37,13 @@ class PurchaseView: UIView {
 
 extension PurchaseView {
     
+    func perpare(mv: MagicShopView) {
+        self.mv = mv
+    }
+    
     func setData(shopMode:ShopViewState.shopMode, levelMode: ShopViewState.levelMode, indexPath: IndexPath) {
         let shopList = ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList
+        magicBook = shopList[indexPath.row]
         magicIcon.image = UIImage(named: "\(shopList[indexPath.row].name)")
         magicPrice.text = "$ \(shopList[indexPath.row].price)"
     }
