@@ -25,14 +25,17 @@ struct User: Codable {
     }
 }
 
-class UserData {
-    var user = User(name: "超級 iOS 協作隊", totalMoney: 2000, purchased: Set<Int>())
-
-}
 
 class UserPersist {
         
-    static func saveData(user: User) {
+    var user: User = UserPersist.loadData() ?? User(name: "超級 iOS 協作隊", totalMoney: 2000, purchased: Set<Int>()) {
+        didSet {
+            saveData(user: self.user)
+        }
+    }
+    
+    func saveData(user: User) {
+
         // Use PropertyListEncoder to convert Player into Data / NSData
         do {
             let userData = try PropertyListEncoder().encode(user)

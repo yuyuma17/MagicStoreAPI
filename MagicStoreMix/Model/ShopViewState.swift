@@ -24,6 +24,7 @@ struct ShopViewState {
         case level2
         case level3
     }
+    
     var array: [MagicBook] {
         switch self.levelMode {
         case .level1:
