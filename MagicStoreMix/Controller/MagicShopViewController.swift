@@ -9,7 +9,7 @@
 import UIKit
 
 class MagicShopViewController: UIViewController {
-
+    
     var magicShopView: MagicShopView { view as! MagicShopView }
     var levelMode: ShopViewState.levelMode = .level1
     var shopMode: ShopViewState.shopMode = .table
@@ -19,7 +19,6 @@ class MagicShopViewController: UIViewController {
         
         magicShopView.perpare(vc: self)
         navigationController?.navigationBar.tintColor = .white
-        magicShopView.setDefaultProperties()
         magicShopView.setUserMoney()
     }
     
@@ -27,15 +26,15 @@ class MagicShopViewController: UIViewController {
 
 extension MagicShopViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch shopMode {
         case .table: return CGSize(width: view.frame.width, height: 90)
         case .collection: return CGSize(width: view.frame.width / 4, height: view.frame.width / 4)
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,5 +53,8 @@ extension MagicShopViewController: UICollectionViewDataSource, UICollectionViewD
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        magicShopView.showAlertView(shopMode: shopMode, levelMode: levelMode, indexPath: indexPath)
+    }
     
 }

@@ -11,7 +11,7 @@ import UIKit
 struct BorderProperties {
     
     static let homePageButton = BorderProperties(cornerRadius: 10, borderWidth: 2)
-    static let purchaseButton = BorderProperties(cornerRadius: 10, borderWidth: 0.5)
+    static let purchaseButton = BorderProperties(cornerRadius: 5, borderWidth: 0.5)
     static let mainViewBorder = BorderProperties(borderWidth: 4)
     static let viewBorder = BorderProperties(borderWidth: 2)
     static let cellBorder = BorderProperties(borderWidth: 1)

@@ -25,6 +25,8 @@
 		B3C044352372C839002BC59A /* MagicShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C044342372C839002BC59A /* MagicShop.storyboard */; };
 		B3C044372372C891002BC59A /* MagicShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044362372C891002BC59A /* MagicShopViewController.swift */; };
 		B3C044392373B905002BC59A /* BorderProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044382373B905002BC59A /* BorderProperties.swift */; };
+		B3E7DE6F2376B45D00465451 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7DE6E2376B45D00465451 /* PurchaseView.swift */; };
+		B3E7DE712376B51A00465451 /* TauntingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7DE702376B51A00465451 /* TauntingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		B3C044342372C839002BC59A /* MagicShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MagicShop.storyboard; sourceTree = "<group>"; };
 		B3C044362372C891002BC59A /* MagicShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicShopViewController.swift; sourceTree = "<group>"; };
 		B3C044382373B905002BC59A /* BorderProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderProperties.swift; sourceTree = "<group>"; };
+		B3E7DE6E2376B45D00465451 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
+		B3E7DE702376B51A00465451 /* TauntingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TauntingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				162B84A32372D9CC00316E63 /* MyOwnCollectionReusableView.swift */,
 				B3900EFC237502820040BC95 /* TableShopViewCell.swift */,
 				B3900EFE237502970040BC95 /* CollectionShopViewCell.swift */,
+				B3E7DE6E2376B45D00465451 /* PurchaseView.swift */,
+				B3E7DE702376B51A00465451 /* TauntingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,7 +207,9 @@
 			files = (
 				B3C044392373B905002BC59A /* BorderProperties.swift in Sources */,
 				B3900EFD237502820040BC95 /* TableShopViewCell.swift in Sources */,
+				B3E7DE712376B51A00465451 /* TauntingView.swift in Sources */,
 				56472FD72372C52800CD9C2B /* HomeViewController.swift in Sources */,
+				B3E7DE6F2376B45D00465451 /* PurchaseView.swift in Sources */,
 				B317F448237424DF004E4FEE /* MagicShopView.swift in Sources */,
 				B317F44A23743913004E4FEE /* ShopViewState.swift in Sources */,
 				B3900EFF237502970040BC95 /* CollectionShopViewCell.swift in Sources */,
