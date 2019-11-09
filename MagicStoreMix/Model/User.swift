@@ -28,13 +28,15 @@ struct User: Codable {
 
 class UserPersist {
         
-    var user: User = UserPersist.loadData() ?? User(name: "超級 iOS 協作隊", totalMoney: 2000, purchased: Set<Int>()) {
+    static let shared = UserPersist()
+    
+    var user: User = loadData() ?? User(name: "超級 iOS 協作隊", totalMoney: 2000, purchased: Set<Int>()) {
         didSet {
             saveData(user: self.user)
         }
     }
     
-    func saveData(user: User) {
+    private func saveData(user: User) {
 
         // Use PropertyListEncoder to convert Player into Data / NSData
         do {
