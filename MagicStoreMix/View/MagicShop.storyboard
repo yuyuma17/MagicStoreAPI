@@ -28,6 +28,9 @@
                                         <state key="normal" title="LV1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapToSwitchLevel1:" destination="xbS-dv-7lX" eventType="touchUpInside" id="5i9-Tj-kpk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zH-Ue-rro">
                                         <rect key="frame" x="83" y="0.0" width="82.5" height="83"/>
@@ -35,6 +38,9 @@
                                         <state key="normal" title="LV2">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapToSwitchLevel2:" destination="xbS-dv-7lX" eventType="touchUpInside" id="6pk-Q9-emd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FR-qw-h7u">
                                         <rect key="frame" x="165.5" y="0.0" width="83" height="83"/>
@@ -42,16 +48,25 @@
                                         <state key="normal" title="LV3">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapToSwitchLevel3:" destination="xbS-dv-7lX" eventType="touchUpInside" id="l5b-Ql-8fv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEw-oU-OFW">
                                         <rect key="frame" x="248.5" y="0.0" width="82.5" height="83"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="list-style-1"/>
+                                        <connections>
+                                            <action selector="tapToSwitchTable:" destination="xbS-dv-7lX" eventType="touchUpInside" id="JV8-nT-cBG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3s-hR-1Xe">
                                         <rect key="frame" x="331" y="0.0" width="83" height="83"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="list-sytle-2"/>
+                                        <connections>
+                                            <action selector="tapToSwitchCollection:" destination="xbS-dv-7lX" eventType="touchUpInside" id="IJn-Tu-kNe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -59,18 +74,18 @@
                                 <rect key="frame" x="0.0" y="127" width="414" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="72q-zI-7a9">
-                                        <rect key="frame" x="157.5" y="15" width="99.5" height="30"/>
+                                        <rect key="frame" x="152.5" y="10" width="109.5" height="40"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="Hxq-Si-SqU">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Hxq-Si-SqU" secondAttribute="height" multiplier="1:1" id="2I7-X9-q87"/>
-                                                    <constraint firstAttribute="height" constant="30" id="QBJ-qq-MPH"/>
+                                                    <constraint firstAttribute="height" constant="40" id="QBJ-qq-MPH"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aj-Pf-JvB">
-                                                <rect key="frame" x="40" y="0.0" width="59.5" height="30"/>
+                                                <rect key="frame" x="50" y="5" width="59.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -103,7 +118,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TKo-jF-zPN">
-                                                    <rect key="frame" x="30" y="23.5" width="128" height="60"/>
+                                                    <rect key="frame" x="20" y="23.5" width="128" height="60"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="43u-Lf-jV2">
                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -150,7 +165,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="pi5-XX-IpM" secondAttribute="bottom" id="74o-Xc-TxD"/>
-                                                <constraint firstItem="TKo-jF-zPN" firstAttribute="leading" secondItem="mrW-5g-oZp" secondAttribute="leading" constant="30" id="8ca-gO-dZg"/>
+                                                <constraint firstItem="TKo-jF-zPN" firstAttribute="leading" secondItem="mrW-5g-oZp" secondAttribute="leading" constant="20" id="8ca-gO-dZg"/>
                                                 <constraint firstItem="pi5-XX-IpM" firstAttribute="top" secondItem="mrW-5g-oZp" secondAttribute="top" id="Kud-3k-d02"/>
                                                 <constraint firstItem="TKo-jF-zPN" firstAttribute="centerY" secondItem="mrW-5g-oZp" secondAttribute="centerY" id="PiP-Bp-eQ1"/>
                                                 <constraint firstAttribute="trailing" secondItem="pi5-XX-IpM" secondAttribute="trailing" id="ob7-Z3-qeo"/>

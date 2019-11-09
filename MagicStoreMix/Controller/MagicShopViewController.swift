@@ -14,13 +14,12 @@ class MagicShopViewController: UIViewController {
     var levelMode: ShopViewState.levelMode = .level1
     var shopMode: ShopViewState.shopMode = .table
     
-//    private let bookList: MagicBookList = MagicBookList()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        magicShopView.setting(mc: self)
-        magicShopView.setDefaultProperties()
+        
+        magicShopView.perpare(vc: self)
         navigationController?.navigationBar.tintColor = .white
+        magicShopView.setDefaultProperties()
         magicShopView.setUserMoney()
     }
     
@@ -28,17 +27,15 @@ class MagicShopViewController: UIViewController {
 
 extension MagicShopViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch shopMode {
-        case .table: return CGSize(width: view.frame.width, height: 80)
+        case .table: return CGSize(width: view.frame.width, height: 90)
         case .collection: return CGSize(width: view.frame.width / 4, height: view.frame.width / 4)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
-//        return ShopViewState.shopList.count
+        return ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,12 +43,13 @@ extension MagicShopViewController: UICollectionViewDataSource, UICollectionViewD
         case .table:
             let cellIdentifier = "tableShopView"
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! TableShopViewCell
-            cell.setShopData(levelMode: levelMode, indexPath: indexPath)
+            cell.setDefaultProperties()
+            cell.setShopData(shopMode: shopMode, levelMode: levelMode, indexPath: indexPath)
             return cell
         case .collection:
             let cellIdentifier = "collectionShopView"
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CollectionShopViewCell
-            cell.setShopData(levelMode: levelMode, indexPath: indexPath)
+            cell.setShopData(shopMode: shopMode, levelMode: levelMode, indexPath: indexPath)
             return cell
         }
     }

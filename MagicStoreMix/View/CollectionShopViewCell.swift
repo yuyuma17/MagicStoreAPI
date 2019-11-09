@@ -17,8 +17,9 @@ class CollectionShopViewCell: UICollectionViewCell {
 
 extension CollectionShopViewCell {
     
-    func setShopData(levelMode: ShopViewState.levelMode, indexPath: IndexPath) {
-//        magicIcon.image = UIImage(named: ShopViewState.shopList[indexPath.row].name)
+    func setShopData(shopMode: ShopViewState.shopMode, levelMode: ShopViewState.levelMode, indexPath: IndexPath) {
+        let shopList = ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList
+        magicIcon.image = UIImage(named: shopList[indexPath.row].name)
     }
     
 }

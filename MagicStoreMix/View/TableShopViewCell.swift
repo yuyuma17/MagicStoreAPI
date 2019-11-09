@@ -19,10 +19,15 @@ class TableShopViewCell: UICollectionViewCell {
 
 extension TableShopViewCell {
     
-    func setShopData(levelMode: ShopViewState.levelMode, indexPath: IndexPath) {
-//        magicIcon.image = UIImage(named: ShopViewState.shopList[indexPath.row].name)
-//        magicName.text = "\(ShopViewState.shopList[indexPath.row].name)"
-//        magicPrice.text = ShopViewState.shopList[indexPath.row].price
+    func setDefaultProperties() {
+        setViewBorder(view: self, configSetting: .cellBorder)
+    }
+    
+    func setShopData(shopMode: ShopViewState.shopMode, levelMode: ShopViewState.levelMode, indexPath: IndexPath) {
+        let shopList = ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList
+        magicIcon.image = UIImage(named: shopList[indexPath.row].name)
+        magicName.text = "\(shopList[indexPath.row].name)"
+        magicPrice.text = "$ \(shopList[indexPath.row].price)"
     }
     
 }

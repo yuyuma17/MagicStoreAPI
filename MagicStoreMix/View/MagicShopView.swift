@@ -10,22 +10,46 @@ import UIKit
 
 class MagicShopView: UIView {
     
-//    private weak var mc: MagicShopViewController?
+    private weak var vc: MagicShopViewController?
     
     @IBOutlet private var changeStateButton: [UIButton]!
     @IBOutlet private var moneyView: UIView!
     @IBOutlet private var userMoney: UILabel!
     @IBOutlet private var magicShopCollectionView: UICollectionView!
     
+    @IBAction private func tapToSwitchLevel1(_ sender: UIButton) {
+        vc?.levelMode = .level1
+        magicShopCollectionView.reloadData()
+    }
+    @IBAction private func tapToSwitchLevel2(_ sender: UIButton) {
+        vc?.levelMode = .level2
+        magicShopCollectionView.reloadData()
+    }
+    @IBAction private func tapToSwitchLevel3(_ sender: UIButton) {
+        vc?.levelMode = .level3
+        magicShopCollectionView.reloadData()
+    }
+    @IBAction private func tapToSwitchTable(_ sender: UIButton) {
+        vc?.shopMode = .table
+        magicShopCollectionView.reloadData()
+    }
+    @IBAction private func tapToSwitchCollection(_ sender: UIButton) {
+        vc?.shopMode = .collection
+        magicShopCollectionView.reloadData()
+    }
+    
 }
 
 extension MagicShopView {
+    
+    func perpare(vc: MagicShopViewController) {
+        self.vc = vc
+    }
     
     func setDefaultProperties() {
         for button in changeStateButton {
             button.contentEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
             setViewBorder(view: button, configSetting: .viewBorder)
-            
         }
         setViewBorder(view: self, configSetting: .mainViewBorder)
         setViewBorder(view: moneyView, configSetting: .viewBorder)
@@ -33,12 +57,7 @@ extension MagicShopView {
     }
     
     func setUserMoney() {
-//        userMoney.text = "\(UserPersist.loadData()!.totalMoney)"
+        userMoney.text = "$ \(UserPersist.shared.user.totalMoney)"
     }
-    
-//    func setting(mc: MagicShopViewController) {
-//        self.mc = mc
-//    }
-    
 
 }

@@ -14,6 +14,7 @@ struct BorderProperties {
     static let purchaseButton = BorderProperties(cornerRadius: 10, borderWidth: 0.5)
     static let mainViewBorder = BorderProperties(borderWidth: 4)
     static let viewBorder = BorderProperties(borderWidth: 2)
+    static let cellBorder = BorderProperties(borderWidth: 1)
     
     var cornerRadius: Double = 0
     var bordercolor: CGColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
