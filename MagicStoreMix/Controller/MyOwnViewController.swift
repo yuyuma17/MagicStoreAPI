@@ -9,6 +9,8 @@
 import UIKit
 
 class MyOwnViewController: UIViewController {
+    
+    let magicBookList = MagicBookList()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +41,13 @@ extension MyOwnViewController: UICollectionViewDataSource {
         var numberOfItems: Int!
         
         if section == 0 {
-            numberOfItems = MagicBookList().level1.count
+            numberOfItems = magicBookList.level1.count
             
         } else if section == 1 {
-            numberOfItems = MagicBookList().level2.count
+            numberOfItems = magicBookList.level2.count
             
         } else if section == 2 {
-            numberOfItems = MagicBookList().level3.count
+            numberOfItems = magicBookList.level3.count
         }
         
         return numberOfItems
@@ -65,16 +67,16 @@ extension MyOwnViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyOwnMagicCell", for: indexPath) as! MyOwnCollectionViewCell
         
         if indexPath.section == 0 {
-            cell.magicIcon.image = UIImage(named: MagicBookList().level1[indexPath.item].name)
-            cell.hideShadowView(MagicBookList().level1[indexPath.item].id)
+            cell.magicIcon.image = UIImage(named: magicBookList.level1[indexPath.item].name)
+            cell.hideShadowView(magicBookList.level1[indexPath.item].id)
             
         } else if indexPath.section == 1 {
-            cell.magicIcon.image = UIImage(named: MagicBookList().level2[indexPath.item].name)
-            cell.hideShadowView(MagicBookList().level2[indexPath.item].id)
+            cell.magicIcon.image = UIImage(named: magicBookList.level2[indexPath.item].name)
+            cell.hideShadowView(magicBookList.level2[indexPath.item].id)
             
         } else if indexPath.section == 2 {
-            cell.magicIcon.image = UIImage(named: MagicBookList().level3[indexPath.item].name)
-            cell.hideShadowView(MagicBookList().level3[indexPath.item].id)
+            cell.magicIcon.image = UIImage(named: magicBookList.level3[indexPath.item].name)
+            cell.hideShadowView(magicBookList.level3[indexPath.item].id)
         }
         
         return cell

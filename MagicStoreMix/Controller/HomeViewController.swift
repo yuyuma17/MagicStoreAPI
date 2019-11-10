@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    let userPersist = UserPersist.shared
     let correctAnswer = [true, true, false, true, true, false, false]
     
     var didInput = [Bool]() {
@@ -19,8 +20,8 @@ class HomeViewController: UIViewController {
                 print(self.didInput)
             }
             if self.didInput == correctAnswer {
-                UserPersist.shared.user.totalMoney += 100
-                moneyLabel.text = "$ \(UserPersist.shared.user.totalMoney)"
+                userPersist.user.totalMoney += 100
+                moneyLabel.text = "$ \(userPersist.user.totalMoney)"
             }
         }
     }
@@ -35,7 +36,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        moneyLabel.text = "$ \(UserPersist.shared.user.totalMoney)"
+        moneyLabel.text = "$ \(userPersist.user.totalMoney)"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
