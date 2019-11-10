@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
             }
             if self.didInput == correctAnswer {
                 UserPersist.shared.user.totalMoney += 100
-                moneyLabel.text = "\(UserPersist.shared.user.totalMoney)"
+                moneyLabel.text = "$ \(UserPersist.shared.user.totalMoney)"
             }
         }
     }

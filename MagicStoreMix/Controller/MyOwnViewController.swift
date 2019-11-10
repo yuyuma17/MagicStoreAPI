@@ -40,8 +40,10 @@ extension MyOwnViewController: UICollectionViewDataSource {
         
         if section == 0 {
             numberOfItems = MagicBookList().level1.count
+            
         } else if section == 1 {
             numberOfItems = MagicBookList().level2.count
+            
         } else if section == 2 {
             numberOfItems = MagicBookList().level3.count
         }
@@ -64,10 +66,15 @@ extension MyOwnViewController: UICollectionViewDataSource {
         
         if indexPath.section == 0 {
             cell.magicIcon.image = UIImage(named: MagicBookList().level1[indexPath.item].name)
+            cell.hideShadowView(MagicBookList().level1[indexPath.item].id)
+            
         } else if indexPath.section == 1 {
             cell.magicIcon.image = UIImage(named: MagicBookList().level2[indexPath.item].name)
+            cell.hideShadowView(MagicBookList().level2[indexPath.item].id)
+            
         } else if indexPath.section == 2 {
             cell.magicIcon.image = UIImage(named: MagicBookList().level3[indexPath.item].name)
+            cell.hideShadowView(MagicBookList().level3[indexPath.item].id)
         }
         
         return cell

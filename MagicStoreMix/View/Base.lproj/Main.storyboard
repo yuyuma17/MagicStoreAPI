@@ -233,8 +233,8 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="100" height="100"/>
                                         <connections>
-                                            <outlet property="coverView" destination="TwM-t4-8L9" id="tam-Ln-h4r"/>
                                             <outlet property="magicIcon" destination="Cru-Hl-iIX" id="5Ts-Sh-TNx"/>
+                                            <outlet property="shadowView" destination="TwM-t4-8L9" id="tam-Ln-h4r"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -243,7 +243,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgS-lP-WqP">
-                                            <rect key="frame" x="10.000000000000004" y="10" width="59.333333333333343" height="30"/>
+                                            <rect key="frame" x="9.9999999999999964" y="10" width="59.666666666666657" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
