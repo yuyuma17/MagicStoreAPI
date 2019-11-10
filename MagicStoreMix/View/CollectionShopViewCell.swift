@@ -24,8 +24,9 @@ extension CollectionShopViewCell {
         magicIcon.image = UIImage(named: shopList[indexPath.row].name)
     }
     
-    func showSoldOutView(_ indexPath: IndexPath) {
-        soldOutView.isHidden = userPersist.user.purchased.contains(indexPath.row) ? false : true
+    func showSoldOutView(shopMode: ShopViewState.shopMode, levelMode: ShopViewState.levelMode, indexPath: IndexPath) {
+        let shopList = ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList
+        soldOutView.isHidden = userPersist.user.purchased.contains(shopList[indexPath.row].id) ? false : true
     }
     
 }

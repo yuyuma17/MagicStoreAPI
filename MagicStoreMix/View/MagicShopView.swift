@@ -48,23 +48,23 @@ class MagicShopView: UIView {
     
     @IBAction private func tapToSwitchLevel1(_ sender: UIButton) {
         vc?.levelMode = .level1
-        magicShopCollectionView.reloadData()
+        reloadCollectionView()
     }
     @IBAction private func tapToSwitchLevel2(_ sender: UIButton) {
         vc?.levelMode = .level2
-        magicShopCollectionView.reloadData()
+        reloadCollectionView()
     }
     @IBAction private func tapToSwitchLevel3(_ sender: UIButton) {
         vc?.levelMode = .level3
-        magicShopCollectionView.reloadData()
+        reloadCollectionView()
     }
     @IBAction private func tapToSwitchTable(_ sender: UIButton) {
         vc?.shopMode = .table
-        magicShopCollectionView.reloadData()
+        reloadCollectionView()
     }
     @IBAction private func tapToSwitchCollection(_ sender: UIButton) {
         vc?.shopMode = .collection
-        magicShopCollectionView.reloadData()
+        reloadCollectionView()
     }
     
 }
@@ -80,7 +80,8 @@ extension MagicShopView {
     }
 
     func showAlertView(shopMode:ShopViewState.shopMode, levelMode: ShopViewState.levelMode, indexPath: IndexPath) {
-        if !userPersist.user.purchased.contains(indexPath.row) {
+        let shopList = ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList
+        if !userPersist.user.purchased.contains(shopList[indexPath.row].id) {
             if userPersist.user.totalMoney >= ShopViewState(shopMode: shopMode, levelMode: levelMode).shopList[indexPath.row].price {
                 self.addSubview(purchaseView)
                 purchaseView.perpare(mv: self)
@@ -89,6 +90,9 @@ extension MagicShopView {
                 self.addSubview(tauntingView)
             }
         }
-        
+    }
+    
+    func reloadCollectionView() {
+        magicShopCollectionView.reloadData()
     }
 }

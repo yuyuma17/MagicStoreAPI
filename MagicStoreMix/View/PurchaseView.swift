@@ -28,6 +28,7 @@ class PurchaseView: UIView {
         userPersist.user.purchase(book: magicBook!)
         self.removeFromSuperview()
         mv?.setUserMoney()
+        mv?.reloadCollectionView()
     }
     @IBAction func tapToCancelPurchase(_ sender: UIButton) {
         self.removeFromSuperview()

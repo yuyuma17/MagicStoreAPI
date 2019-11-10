@@ -14,7 +14,7 @@ struct User: Codable {
     var purchased: Set<Int>
     
     mutating func purchase(book: MagicBook) {
-        if totalMoney > book.price && !purchased.contains(book.id) {
+        if totalMoney >= book.price && !purchased.contains(book.id) {
             totalMoney -= book.price
             purchased.insert(book.id)
         }
