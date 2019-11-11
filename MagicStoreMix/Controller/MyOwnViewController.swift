@@ -32,9 +32,12 @@ class MyOwnViewController: UIViewController {
 
 extension MyOwnViewController: UICollectionViewDelegate {
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if UserPersist.shared.user.getPurchased(book: magicBookList.bookLists[indexPath.item]) {
+            
+//            if let sellVC = 
+        }
+    }
 }
 
 extension MyOwnViewController: UICollectionViewDataSource {
