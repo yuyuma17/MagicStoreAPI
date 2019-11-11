@@ -12,11 +12,16 @@ class SellViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        magicIcon = image
+        magicPrice.text = "\(price!)"
     }
     
     private let userPersist = UserPersist.shared
     private var magicBook: MagicBook?
     var vc: MyOwnViewController?
+    var image: UIImageView?
+    var price: Int?
     
     @IBOutlet var magicIcon: UIImageView!
     @IBOutlet var magicPrice: UILabel!
@@ -31,7 +36,7 @@ class SellViewController: UIViewController {
     @IBAction func tapToSell(_ sender: UIButton) {
         userPersist.user.sell(book: magicBook!)
         dismiss(animated: true) {
-            
+            self.vc?.collectionView.reloadData()
         }
     }
     @IBAction func tapToCancel(_ sender: UIButton) {
