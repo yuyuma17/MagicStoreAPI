@@ -19,7 +19,6 @@ class MagicShopViewController: UIViewController {
         
         magicShopView.perpare(vc: self)
         navigationController?.navigationBar.tintColor = .white
-        magicShopView.setUserMoney()
     }
     
 }

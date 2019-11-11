@@ -10,13 +10,24 @@ import UIKit
 
 class TauntingView: UIView {
 
-    @IBOutlet var byeByeButton: UIButton! {
+    private weak var mv: MagicShopView?
+    
+    @IBOutlet private var byeByeButton: UIButton! {
         didSet {
             setViewBorder(view: byeByeButton, configSetting: .purchaseButton)
         }
     }
     
-    @IBAction func tapToByeBye(_ sender: UIButton) {
-        self.removeFromSuperview()
+    @IBAction private func tapToByeBye(_ sender: UIButton) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1), execute: {
+            self.removeFromSuperview()
+            self.mv?.shopIsUserInteractionEnabled(true)
+        })
     }
+}
+
+extension TauntingView {
+    
+    func perpare(mv: MagicShopView) { self.mv = mv }
+    
 }

@@ -251,11 +251,11 @@
                             <outlet property="purchaseView" destination="XiE-Zm-XSK" id="rHz-r5-CCS"/>
                             <outlet property="tauntingView" destination="UQ8-Wj-IG7" id="3ng-ov-Uwk"/>
                             <outlet property="userMoney" destination="6aj-Pf-JvB" id="3Sd-4E-dd1"/>
-                            <outletCollection property="changeStateButton" destination="hX6-mn-qmC" collectionClass="NSMutableArray" id="EZa-2B-xJs"/>
-                            <outletCollection property="changeStateButton" destination="9zH-Ue-rro" collectionClass="NSMutableArray" id="SAt-1F-0Hs"/>
-                            <outletCollection property="changeStateButton" destination="2FR-qw-h7u" collectionClass="NSMutableArray" id="tUF-dr-Mi9"/>
-                            <outletCollection property="changeStateButton" destination="CEw-oU-OFW" collectionClass="NSMutableArray" id="xZc-DE-i8Z"/>
-                            <outletCollection property="changeStateButton" destination="K3s-hR-1Xe" collectionClass="NSMutableArray" id="K4f-uI-DNF"/>
+                            <outletCollection property="changeLevelStateButton" destination="hX6-mn-qmC" collectionClass="NSMutableArray" id="EZa-2B-xJs"/>
+                            <outletCollection property="changeLevelStateButton" destination="9zH-Ue-rro" collectionClass="NSMutableArray" id="SAt-1F-0Hs"/>
+                            <outletCollection property="changeLevelStateButton" destination="2FR-qw-h7u" collectionClass="NSMutableArray" id="tUF-dr-Mi9"/>
+                            <outletCollection property="changeShopViewStateButton" destination="CEw-oU-OFW" collectionClass="NSMutableArray" id="3Md-zL-cgs"/>
+                            <outletCollection property="changeShopViewStateButton" destination="K3s-hR-1Xe" collectionClass="NSMutableArray" id="CxT-kb-2F0"/>
                         </connections>
                     </view>
                 </viewController>
