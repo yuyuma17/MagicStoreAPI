@@ -19,6 +19,13 @@ struct User: Codable {
             purchased.insert(book.id)
         }
     }
+    
+    mutating func sell(book: MagicBook) {
+        if  purchased.contains(book.id) {
+            totalMoney += book.price
+            purchased.remove(book.id)
+        }
+    }
 }
 
 
