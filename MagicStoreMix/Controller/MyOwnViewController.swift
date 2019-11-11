@@ -12,6 +12,8 @@ class MyOwnViewController: UIViewController {
     
     let magicBookList = MagicBookList()
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
