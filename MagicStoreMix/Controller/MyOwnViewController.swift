@@ -40,6 +40,7 @@ extension MyOwnViewController: UICollectionViewDelegate {
             if let sellVC = storyboard?.instantiateViewController(withIdentifier: "sellVC") as? SellViewController {
                 sellVC.magicIcon.image = UIImage(named: magicBookList.bookLists[indexPath.item].name)
                 sellVC.magicPrice.text = "\(magicBookList.bookLists[indexPath.item].price)"
+                sellVC.vc = self
                 present(sellVC, animated: false)
             }
         }
