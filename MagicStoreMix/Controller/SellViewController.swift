@@ -12,11 +12,31 @@ class SellViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
+    
+    private let userPersist = UserPersist.shared
+    private var magicBook: MagicBook?
+    var vc: MyOwnViewController?
     
     @IBOutlet var magicIcon: UIImageView!
     @IBOutlet var magicPrice: UILabel!
-    @IBOutlet var dicisionButton: [UIButton]!
+    @IBOutlet var dicisionButtons: [UIButton]! {
+        didSet {
+            for button in dicisionButtons {
+                setViewBorder(view: button, configSetting: .purchaseButton)
+            }
+        }
+    }
+    
+    @IBAction func tapToSell(_ sender: UIButton) {
+        userPersist.user.sell(book: magicBook!)
+        dismiss(animated: true) {
+            
+        }
+    }
+    @IBAction func tapToCancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 }

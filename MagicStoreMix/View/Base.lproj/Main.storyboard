@@ -282,7 +282,7 @@
         <!--Sell View Controller-->
         <scene sceneID="c58-aL-k5g">
             <objects>
-                <viewController id="fAH-6G-pZa" customClass="SellViewController" customModule="MagicStoreMix" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sellVC" id="fAH-6G-pZa" customClass="SellViewController" customModule="MagicStoreMix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rua-YR-oai">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,32 +290,52 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uU-p9-GcY">
                                 <rect key="frame" x="97" y="338" width="220" height="220"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="3cy-Xv-3LP">
-                                        <rect key="frame" x="38" y="29" width="144" height="162.33333333333334"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3cy-Xv-3LP">
+                                        <rect key="frame" x="30" y="20" width="160" height="180"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="76e-mC-o9x">
-                                                <rect key="frame" x="27" y="0.0" width="90" height="90"/>
+                                                <rect key="frame" x="35" y="0.0" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="76e-mC-o9x" secondAttribute="height" multiplier="1:1" id="7C7-oy-bKW"/>
                                                     <constraint firstAttribute="width" constant="90" id="ZvR-D3-Hu4"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr6-qk-kMZ">
-                                                <rect key="frame" x="51.333333333333343" y="101" width="41.666666666666657" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="56" y="105" width="48" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="mPs-79-TMB">
-                                                <rect key="frame" x="0.0" y="132.33333333333331" width="144" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mPs-79-TMB">
+                                                <rect key="frame" x="0.0" y="144" width="160" height="36"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-gy-Cwa">
-                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="DVB-pY-sil"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <state key="normal" title="販售">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapToSell:" destination="fAH-6G-pZa" eventType="touchUpInside" id="0Pk-pl-qkg"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3v-hO-Evd">
-                                                        <rect key="frame" x="98" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <rect key="frame" x="90" y="0.0" width="70" height="36"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="svl-aD-tvT"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <state key="normal" title="取消">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="tapToCancel:" destination="fAH-6G-pZa" eventType="touchUpInside" id="jiY-9I-SCs"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -341,8 +361,8 @@
                     <connections>
                         <outlet property="magicIcon" destination="76e-mC-o9x" id="VT8-PW-jKi"/>
                         <outlet property="magicPrice" destination="Hr6-qk-kMZ" id="jxs-CQ-JdE"/>
-                        <outletCollection property="dicisionButton" destination="dPp-gy-Cwa" collectionClass="NSMutableArray" id="64G-ti-Nmv"/>
-                        <outletCollection property="dicisionButton" destination="K3v-hO-Evd" collectionClass="NSMutableArray" id="aZb-ae-dXu"/>
+                        <outletCollection property="dicisionButtons" destination="dPp-gy-Cwa" collectionClass="NSMutableArray" id="64G-ti-Nmv"/>
+                        <outletCollection property="dicisionButtons" destination="K3v-hO-Evd" collectionClass="NSMutableArray" id="aZb-ae-dXu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDc-da-z8i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
