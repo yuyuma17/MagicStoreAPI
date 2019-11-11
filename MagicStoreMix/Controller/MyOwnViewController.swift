@@ -32,9 +32,9 @@ class MyOwnViewController: UIViewController {
 
 extension MyOwnViewController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        <#code#>
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        <#code#>
+//    }
 }
 
 extension MyOwnViewController: UICollectionViewDataSource {

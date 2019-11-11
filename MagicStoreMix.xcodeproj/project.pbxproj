@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161A4A1B2379478C00AEC539 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A4A1A2379478C00AEC539 /* Protocol.swift */; };
 		162B84A02372CCAC00316E63 /* MyOwnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B849F2372CCAC00316E63 /* MyOwnViewController.swift */; };
 		162B84A22372D98100316E63 /* MyOwnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B84A12372D98100316E63 /* MyOwnCollectionViewCell.swift */; };
 		162B84A42372D9CC00316E63 /* MyOwnCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B84A32372D9CC00316E63 /* MyOwnCollectionReusableView.swift */; };
@@ -27,9 +28,11 @@
 		B3C044392373B905002BC59A /* BorderProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C044382373B905002BC59A /* BorderProperties.swift */; };
 		B3E7DE6F2376B45D00465451 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7DE6E2376B45D00465451 /* PurchaseView.swift */; };
 		B3E7DE712376B51A00465451 /* TauntingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7DE702376B51A00465451 /* TauntingView.swift */; };
+		B3FE8677237947AF00C283F1 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FE8676237947AF00C283F1 /* SellViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		161A4A1A2379478C00AEC539 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		162B849F2372CCAC00316E63 /* MyOwnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOwnViewController.swift; sourceTree = "<group>"; };
 		162B84A12372D98100316E63 /* MyOwnCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOwnCollectionViewCell.swift; sourceTree = "<group>"; };
 		162B84A32372D9CC00316E63 /* MyOwnCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOwnCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		B3C044382373B905002BC59A /* BorderProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderProperties.swift; sourceTree = "<group>"; };
 		B3E7DE6E2376B45D00465451 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		B3E7DE702376B51A00465451 /* TauntingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TauntingView.swift; sourceTree = "<group>"; };
+		B3FE8676237947AF00C283F1 /* SellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		161A4A1C2379479100AEC539 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				161A4A1A2379478C00AEC539 /* Protocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		56472FC62372C52800CD9C2B = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +96,7 @@
 		56472FD12372C52800CD9C2B /* MagicStoreMix */ = {
 			isa = PBXGroup;
 			children = (
+				161A4A1C2379479100AEC539 /* Protocol */,
 				B38A5D022373C40B00200DC8 /* Model */,
 				B38A5D032373C41C00200DC8 /* View */,
 				B38A5D042373C42500200DC8 /* Controller */,
@@ -129,6 +142,7 @@
 				56472FD62372C52800CD9C2B /* HomeViewController.swift */,
 				B3C044362372C891002BC59A /* MagicShopViewController.swift */,
 				162B849F2372CCAC00316E63 /* MyOwnViewController.swift */,
+				B3FE8676237947AF00C283F1 /* SellViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,9 +230,11 @@
 				162B84A02372CCAC00316E63 /* MyOwnViewController.swift in Sources */,
 				56472FD32372C52800CD9C2B /* AppDelegate.swift in Sources */,
 				B3C044372372C891002BC59A /* MagicShopViewController.swift in Sources */,
+				B3FE8677237947AF00C283F1 /* SellViewController.swift in Sources */,
 				56472FD52372C52800CD9C2B /* SceneDelegate.swift in Sources */,
 				B388D8A7237519E4000BC6D2 /* MagicBookList.swift in Sources */,
 				162B84A22372D98100316E63 /* MyOwnCollectionViewCell.swift in Sources */,
+				161A4A1B2379478C00AEC539 /* Protocol.swift in Sources */,
 				56472FF52373C7A100CD9C2B /* User.swift in Sources */,
 				162B84A42372D9CC00316E63 /* MyOwnCollectionReusableView.swift in Sources */,
 			);
