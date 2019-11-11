@@ -35,7 +35,11 @@ extension MyOwnViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if UserPersist.shared.user.getPurchased(book: magicBookList.bookLists[indexPath.item]) {
             
-//            if let sellVC = 
+            if let sellVC = storyboard?.instantiateViewController(withIdentifier: "sellVC") as? SellViewController {
+                sellVC.magicIcon.image = UIImage(named: magicBookList.bookLists[indexPath.item].name)
+                sellVC.magicPrice.text = "\(magicBookList.bookLists[indexPath.item].price)"
+                present(sellVC, animated: false)
+            }
         }
     }
 }
