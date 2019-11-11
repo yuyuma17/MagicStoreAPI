@@ -9,14 +9,31 @@
 import Foundation
 
 struct User: Codable {
-    var name: String
-    var totalMoney: Int
-    var purchased: Set<Int>
+    private(set) var name: String
+    private(set) var totalMoney: Int
+    private(set) var purchased: Set<Int>
+    
+    func getMoney() -> Int {
+        return self.totalMoney
+    }
+    
+    func getPurchased(book: MagicBook) -> Bool {
+        return purchased.contains(book.id)
+    }
     
     mutating func purchase(book: MagicBook) {
         if totalMoney >= book.price && !purchased.contains(book.id) {
             totalMoney -= book.price
             purchased.insert(book.id)
+        }
+    }
+    
+    mutating func sell(book: MagicBook) {
+
+        if  purchased.contains(book.id) {
+
+            totalMoney += book.price
+            purchased.remove(book.id)
         }
     }
 }

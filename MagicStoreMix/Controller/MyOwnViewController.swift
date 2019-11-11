@@ -30,8 +30,15 @@ class MyOwnViewController: UIViewController {
 }
 
 
-extension MyOwnViewController: UICollectionViewDataSource {
+extension MyOwnViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        <#code#>
+    }
+}
+
+extension MyOwnViewController: UICollectionViewDataSource {
+    //
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
