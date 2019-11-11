@@ -13,14 +13,14 @@ class SellViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        magicIcon = image
+        magicIcon.image = image
         magicPrice.text = "\(price!)"
     }
     
     private let userPersist = UserPersist.shared
-    private var magicBook: MagicBook?
+    var magicBook: MagicBook?
     var vc: MyOwnViewController?
-    var image: UIImageView?
+    var image: UIImage?
     var price: Int?
     
     @IBOutlet var magicIcon: UIImageView!

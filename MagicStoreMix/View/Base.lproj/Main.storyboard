@@ -285,7 +285,7 @@
         <!--Sell View Controller-->
         <scene sceneID="c58-aL-k5g">
             <objects>
-                <viewController storyboardIdentifier="sellVC" id="fAH-6G-pZa" customClass="SellViewController" customModule="MagicStoreMix" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sellVC" modalPresentationStyle="fullScreen" id="fAH-6G-pZa" customClass="SellViewController" customModule="MagicStoreMix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rua-YR-oai">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
