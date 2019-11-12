@@ -1,5 +1,5 @@
 //
-//  Login.swift
+//  Magic.swift
 //  MagicStoreMix
 //
 //  Created by 黃士軒 on 2019/11/12.
@@ -8,16 +8,12 @@
 
 import Foundation
 
-struct LoginData: Codable {
+struct Magic: Codable {
     
+    let id: Int
     let name: String
-    let password: String
+    let price: String
+    let level: Int
+    let magic_id: Int?
     
-}
-
-struct LoginResult: Codable {
-    
-    var name: String
-    var balance: Int
-
 }

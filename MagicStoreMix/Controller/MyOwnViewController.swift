@@ -13,12 +13,48 @@ class MyOwnViewController: UIViewController {
     let magicBookList = MagicBookList()
     let userPersist = UserPersist.shared
     
+    let magicAPI = "http://vegelephant.club/api/shop/1?password=lacie&name=lacie"
+    var magics = [Magic]()
+    lazy var level1 = [Magic]()
+    lazy var level2 = [Magic]()
+    lazy var level3 = [Magic]()
+    
+    let activityIndicatorView = UIActivityIndicatorView(style: .medium)
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         reviseBackButtonNameAndColor()
+        
+        if let urlString = magicAPI.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let url = URL(string: urlString) {
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    
+                    if let magicResults = try? decoder.decode([Magic].self, from: data) {
+                        self.magics = magicResults
+                        
+                        DispatchQueue.main.async {
+                            self.level1 = self.magics.filter {($0.level == 1)}
+                            self.level2 = self.magics.filter {($0.level == 2)}
+                            self.level3 = self.magics.filter {($0.level == 3)}
+                            self.collectionView.reloadData()
+                        }
+                        
+                    } else {
+                        print("error")
+                    }
+                } else {
+                    print("data not found")
+                }
+            }
+            task.resume()
+        } else {
+            print("URL trans fail")
+        }
     }
     
     
@@ -86,17 +122,17 @@ extension MyOwnViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         var numberOfItems: Int!
-        
+
         if section == 0 {
-            numberOfItems = magicBookList.level1.count
-            
+            numberOfItems = level1.count
+
         } else if section == 1 {
-            numberOfItems = magicBookList.level2.count
-            
+            numberOfItems = level2.count
+
         } else if section == 2 {
-            numberOfItems = magicBookList.level3.count
+            numberOfItems = level3.count
         }
-        
+
         return numberOfItems
     }
     
@@ -112,18 +148,22 @@ extension MyOwnViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyOwnMagicCell", for: indexPath) as! MyOwnCollectionViewCell
-        
+
         if indexPath.section == 0 {
-            cell.magicIcon.image = UIImage(named: magicBookList.level1[indexPath.item].name)
-            cell.hideShadowView(magicBookList.level1[indexPath.item].id)
-            
+            cell.magicIcon.image = UIImage(named: level1[indexPath.item].name)
+//            cell.magicIcon.image = UIImage(named: magicBookList.level1[indexPath.item].name)
+//            cell.hideShadowView(magicBookList.level1[indexPath.item].id)
+
         } else if indexPath.section == 1 {
-            cell.magicIcon.image = UIImage(named: magicBookList.level2[indexPath.item].name)
-            cell.hideShadowView(magicBookList.level2[indexPath.item].id)
-            
+                cell.magicIcon.image = UIImage(named: level2[indexPath.item].name)
+//            cell.magicIcon.image = UIImage(named: magicBookList.level2[indexPath.item].name)
+//            cell.hideShadowView(magicBookList.level2[indexPath.item].id)
+
         } else if indexPath.section == 2 {
-            cell.magicIcon.image = UIImage(named: magicBookList.level3[indexPath.item].name)
-            cell.hideShadowView(magicBookList.level3[indexPath.item].id)
+
+                cell.magicIcon.image = UIImage(named: level3[indexPath.item].name)
+//            cell.magicIcon.image = UIImage(named: magicBookList.level3[indexPath.item].name)
+//            cell.hideShadowView(magicBookList.level3[indexPath.item].id)
         }
         
         return cell

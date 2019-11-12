@@ -10,6 +10,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    var vc: LoginViewController?
+    var playerName: String?
+    var playerMoney: Int?
+    
     let userPersist = UserPersist.shared
     let correctAnswer = [true, true, false, true, true, false, false]
     
@@ -20,8 +24,8 @@ class HomeViewController: UIViewController {
                 print(self.didInput)
             }
             if self.didInput == correctAnswer {
-                userPersist.user.addMoney()
-                moneyLabel.text = "$ \(userPersist.user.totalMoney)"
+                playerMoney! += 100
+                moneyLabel.text = "$ \(playerMoney!)"
             }
         }
     }
@@ -31,12 +35,14 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        moneyLabel.text = "$ \(userPersist.user.totalMoney)"
+        nameLabel.text = playerName
+        moneyLabel.text = "$ \(playerMoney!)"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,6 +57,10 @@ class HomeViewController: UIViewController {
     
     @IBAction func belowButton(_ sender: UIButton) {
         didInput.append(false)
+    }
+    
+    @IBAction func logoutButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
