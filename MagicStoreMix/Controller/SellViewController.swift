@@ -35,12 +35,12 @@ class SellViewController: UIViewController {
     
     @IBAction func tapToSell(_ sender: UIButton) {
         userPersist.user.sell(book: magicBook!)
-        dismiss(animated: true) {
+        dismiss(animated: false) {
             self.vc?.collectionView.reloadData()
         }
     }
     @IBAction func tapToCancel(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     
     
