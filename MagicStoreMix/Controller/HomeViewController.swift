@@ -70,7 +70,7 @@ class HomeViewController: UIViewController {
         let url = URL(string: "http://vegelephant.club/api/bonus")!
         
         var request = URLRequest(url: url)
-        request.httpMethod = "Put"
+        request.httpMethod = "PUT"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in

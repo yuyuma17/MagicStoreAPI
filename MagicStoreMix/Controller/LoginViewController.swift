@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     var loginResult: LoginResult?
+    var registerResult: RegisterResult?
     
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -73,7 +74,7 @@ class LoginViewController: UIViewController {
                 let data = data,
                 let dataString = String(data: data, encoding: .utf8) {
                 print (dataString)
-                self.decodeData(data)
+                self.decodeData1(data)
                 
                 DispatchQueue.main.async {
                     
@@ -93,12 +94,68 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registerButton(_ sender: UIButton) {
+        
+        let registerData = RegisterData(name: accountTextField.text!, password: passwordTextField.text!)
+        guard let uploadData = try? JSONEncoder().encode(registerData) else {
+            return
+        }
+        let url = URL(string: "http://vegelephant.club/api/register")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "Post"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
+            
+            if let error = error {
+                print ("error: \(error)")
+                return
+            }
+            guard let response = response as? HTTPURLResponse,
+                (200...299).contains(response.statusCode) else {
+                    
+                    DispatchQueue.main.async {
+                        self.showAlert()
+                    }
+                    print ("server error")
+                    return
+            }
+            
+            if let mimeType = response.mimeType,
+                mimeType == "application/json",
+                let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print (dataString)
+                self.decodeData2(data)
+
+                DispatchQueue.main.async {
+                    
+                    if let homeViewNaviVC = self.storyboard?.instantiateViewController(withIdentifier: "homeViewNaviVC") as? UINavigationController {
+                        
+                        let homeViewVC = homeViewNaviVC.viewControllers.first as! HomeViewController
+                        homeViewVC.vc = self
+                        homeViewVC.playerName = self.registerResult?.user[0].name
+                        homeViewVC.playerMoney = self.registerResult?.user[0].balance
+                        
+                        self.present(homeViewNaviVC, animated: true)
+                    }
+                }
+            }
+        }
+        task.resume()
     }
     
-    func decodeData(_ data: Data) {
+    func decodeData1(_ data: Data) {
         let decoder = JSONDecoder()
         if let data = try? decoder.decode(LoginResult.self, from: data) {
             loginResult = data
+        }
+    }
+    
+    func decodeData2(_ data: Data) {
+        let decoder = JSONDecoder()
+        if let data = try? decoder.decode(RegisterResult.self, from: data) {
+            registerResult = data
         }
     }
     

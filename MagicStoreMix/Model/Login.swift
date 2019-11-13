@@ -21,3 +21,28 @@ struct LoginResult: Codable {
     var balance: Int
 
 }
+
+
+struct RegisterData: Codable {
+    
+    let name: String
+    let password: String
+    let role = 0
+    
+}
+
+struct RegisterInfor: Codable {
+    
+    let name: String
+    let balance: Int
+    
+}
+
+struct RegisterResult: Codable {
+    
+//    let result: String
+    let user: [RegisterInfor]
+    
+}
+
+
