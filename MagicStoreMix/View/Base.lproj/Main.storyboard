@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L9i-kZ-Rxe">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -404,7 +404,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="logicButton:" destination="L9i-kZ-Rxe" eventType="touchUpInside" id="nbs-4Z-O8w"/>
+                                    <action selector="loginButton:" destination="L9i-kZ-Rxe" eventType="touchUpInside" id="nbs-4Z-O8w"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iff-YC-BVx">
@@ -512,8 +512,9 @@
                     </view>
                     <connections>
                         <outlet property="accountTextField" destination="g5V-bL-CO3" id="AVl-Ml-DZj"/>
+                        <outlet property="loginBtnOutlet" destination="13b-eH-qYt" id="kqA-8V-Kxi"/>
                         <outlet property="passwordTextField" destination="pA3-1S-PP8" id="1Wz-ML-2gM"/>
-                        <outlet property="registerOutlet" destination="iff-YC-BVx" id="f63-2d-Pdr"/>
+                        <outlet property="registerBtnOutlet" destination="iff-YC-BVx" id="f63-2d-Pdr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCG-pG-WTC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

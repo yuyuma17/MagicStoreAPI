@@ -14,21 +14,33 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var registerOutlet: UIButton!
+    @IBOutlet weak var loginBtnOutlet: UIButton!
+    @IBOutlet weak var registerBtnOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        accountTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
     @IBAction func onOffRegister(_ sender: UISwitch) {
         if sender.isOn {
-            registerOutlet.isHidden = false
+            registerBtnOutlet.isHidden = false
         } else {
-            registerOutlet.isHidden = true
+            registerBtnOutlet.isHidden = true
         }
     }
     
-    @IBAction func logicButton(_ sender: UIButton) {
+    @IBAction func loginButton(_ sender: UIButton) {
         
         let loginData = LoginData(name: accountTextField.text!, password: passwordTextField.text!)
         guard let uploadData = try? JSONEncoder().encode(loginData) else {
@@ -42,25 +54,45 @@ class LoginViewController: UIViewController {
         
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
             
-            if let mimeType = response?.mimeType,
+            if let error = error {
+                print ("error: \(error)")
+                return
+            }
+            guard let response = response as? HTTPURLResponse,
+                (200...299).contains(response.statusCode) else {
+                    
+                    DispatchQueue.main.async {
+                        self.showAlert()
+                    }
+                    print ("server error")
+                    return
+            }
+            
+            if let mimeType = response.mimeType,
                 mimeType == "application/json",
-                let data = data {
+                let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print (dataString)
                 self.decodeData(data)
+                
+                DispatchQueue.main.async {
+                    
+                    if let homeViewNaviVC = self.storyboard?.instantiateViewController(withIdentifier: "homeViewNaviVC") as? UINavigationController {
+                        
+                        let homeViewVC = homeViewNaviVC.viewControllers.first as! HomeViewController
+                        homeViewVC.vc = self
+                        homeViewVC.playerName = self.loginResult?.name
+                        homeViewVC.playerMoney = self.loginResult?.balance
+                        
+                        self.present(homeViewNaviVC, animated: true)
+                    }
+                }
             }
         }
         task.resume()
-        
-        while loginResult == nil {}
-        
-        if let homeViewNaviVC = self.storyboard?.instantiateViewController(withIdentifier: "homeViewNaviVC") as? UINavigationController {
-            
-            let homeViewVC = homeViewNaviVC.viewControllers.first as! HomeViewController
-            homeViewVC.vc = self
-            homeViewVC.playerName = loginResult?.name
-            homeViewVC.playerMoney = loginResult?.balance
-            
-            self.present(homeViewNaviVC, animated: true)
-        }
+    }
+    
+    @IBAction func registerButton(_ sender: UIButton) {
     }
     
     func decodeData(_ data: Data) {
@@ -70,6 +102,13 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func registerButton(_ sender: UIButton) {
+    func showAlert() {
+        
+        let alert = UIAlertController(title: "打錯帳號或密碼啦", message: "", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "好啦", style: .cancel, handler: nil)
+        
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
 }
