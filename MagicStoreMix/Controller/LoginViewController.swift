@@ -97,8 +97,8 @@ class LoginViewController: UIViewController {
     
     func decodeData(_ data: Data) {
         let decoder = JSONDecoder()
-        if let loginData = try? decoder.decode(LoginResult.self, from: data) {
-            loginResult = loginData
+        if let data = try? decoder.decode(LoginResult.self, from: data) {
+            loginResult = data
         }
     }
     

@@ -14,7 +14,8 @@ class HomeViewController: UIViewController {
     var playerName: String?
     var playerMoney: Int?
     
-    let userPersist = UserPersist.shared
+    var addMoney: AddMoney?
+    
     let correctAnswer = [true, true, false, true, true, false, false]
     
     var didInput = [Bool]() {
@@ -24,8 +25,7 @@ class HomeViewController: UIViewController {
                 print(self.didInput)
             }
             if self.didInput == correctAnswer {
-                playerMoney! += 100
-                moneyLabel.text = "$ \(playerMoney!)"
+                self.addMoneyTip()
             }
         }
     }
@@ -60,6 +60,53 @@ class HomeViewController: UIViewController {
     
     @IBAction func logoutButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func addMoneyTip() {
+        let loginData = LoginData(name: "lacie", password: "lacie")
+        guard let uploadData = try? JSONEncoder().encode(loginData) else {
+            return
+        }
+        let url = URL(string: "http://vegelephant.club/api/bonus")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "Put"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
+            
+            if let error = error {
+                print ("error: \(error)")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse,
+                (200...299).contains(response.statusCode) else {
+                    print ("server error")
+                    return
+            }
+            
+            if let mimeType = response.mimeType,
+                mimeType == "application/json",
+                let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print (dataString)
+                self.decodeData(data)
+                
+                DispatchQueue.main.async {
+                    self.playerMoney = self.addMoney?.result[0].balance
+                    self.moneyLabel.text = "$ \(self.playerMoney!)"
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func decodeData(_ data: Data) {
+        let decoder = JSONDecoder()
+        if let data = try? decoder.decode(AddMoney.self, from: data) {
+            addMoney = data
+        }
     }
 }
 
