@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1621483A237A46E300AB2335 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16214839237A46E300AB2335 /* LoginViewController.swift */; };
-		1621483C237A7E1D00AB2335 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621483B237A7E1D00AB2335 /* Login.swift */; };
+		1621483C237A7E1D00AB2335 /* LoginAndRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621483B237A7E1D00AB2335 /* LoginAndRegister.swift */; };
 		1621483E237A8DF500AB2335 /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621483D237A8DF500AB2335 /* Magic.swift */; };
 		162B84A02372CCAC00316E63 /* MyOwnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B849F2372CCAC00316E63 /* MyOwnViewController.swift */; };
 		162B84A22372D98100316E63 /* MyOwnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B84A12372D98100316E63 /* MyOwnCollectionViewCell.swift */; };
@@ -36,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		16214839237A46E300AB2335 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1621483B237A7E1D00AB2335 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		1621483B237A7E1D00AB2335 /* LoginAndRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegister.swift; sourceTree = "<group>"; };
 		1621483D237A8DF500AB2335 /* Magic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
 		162B849F2372CCAC00316E63 /* MyOwnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOwnViewController.swift; sourceTree = "<group>"; };
 		162B84A12372D98100316E63 /* MyOwnCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOwnCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		B38A5D022373C40B00200DC8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1621483B237A7E1D00AB2335 /* Login.swift */,
+				1621483B237A7E1D00AB2335 /* LoginAndRegister.swift */,
 				1621483D237A8DF500AB2335 /* Magic.swift */,
 				168A1ED8237BA8F60072CF3D /* AddMoney.swift */,
 				56472FF32373C7A100CD9C2B /* User.swift */,
@@ -233,7 +233,7 @@
 				162B84A02372CCAC00316E63 /* MyOwnViewController.swift in Sources */,
 				1621483E237A8DF500AB2335 /* Magic.swift in Sources */,
 				56472FD32372C52800CD9C2B /* AppDelegate.swift in Sources */,
-				1621483C237A7E1D00AB2335 /* Login.swift in Sources */,
+				1621483C237A7E1D00AB2335 /* LoginAndRegister.swift in Sources */,
 				B3C044372372C891002BC59A /* MagicShopViewController.swift in Sources */,
 				B3FE8677237947AF00C283F1 /* SellViewController.swift in Sources */,
 				56472FD52372C52800CD9C2B /* SceneDelegate.swift in Sources */,
@@ -394,7 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jes-yang.MagicStoreMix";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -412,7 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jes-yang.MagicStoreMix";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

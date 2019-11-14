@@ -17,3 +17,9 @@ struct Magic: Codable {
     let magic_id: Int?
     
 }
+
+struct MagicBookItem: Codable {
+    
+    let magics: [Magic]
+    
+}

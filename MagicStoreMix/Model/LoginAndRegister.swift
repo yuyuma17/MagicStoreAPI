@@ -1,5 +1,5 @@
 //
-//  Login.swift
+//  LoginAndRegister.swift
 //  MagicStoreMix
 //
 //  Created by 黃士軒 on 2019/11/12.
@@ -8,22 +8,14 @@
 
 import Foundation
 
-struct LoginData: Codable {
+struct ShouldPassLoginData: Codable {
     
     let name: String
     let password: String
     
 }
 
-struct LoginResult: Codable {
-    
-    var name: String
-    var balance: Int
-
-}
-
-
-struct RegisterData: Codable {
+struct ShouldPassRegisterData: Codable {
     
     let name: String
     let password: String
@@ -31,17 +23,22 @@ struct RegisterData: Codable {
     
 }
 
-struct RegisterInfor: Codable {
+struct ShouldReceiveInformation: Codable {
     
     let name: String
     let balance: Int
     
 }
 
-struct RegisterResult: Codable {
+struct ReceiveLoginResult: Codable {
     
-//    let result: String
-    let user: [RegisterInfor]
+    let user: ShouldReceiveInformation
+
+}
+
+struct ReceiveRegisterResult: Codable {
+    
+    let user: ShouldReceiveInformation
     
 }
 

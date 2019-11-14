@@ -10,8 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    var loginResult: LoginResult?
-    var registerResult: RegisterResult?
+    var loginResult: ReceiveLoginResult?
+    var registerResult: ReceiveRegisterResult?
     
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         
-        let loginData = LoginData(name: accountTextField.text!, password: passwordTextField.text!)
+        let loginData = ShouldPassLoginData(name: accountTextField.text!, password: passwordTextField.text!)
         guard let uploadData = try? JSONEncoder().encode(loginData) else {
             return
         }
@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
             }
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
-                    
+
                     DispatchQueue.main.async {
                         self.showAlert()
                     }
@@ -82,8 +82,8 @@ class LoginViewController: UIViewController {
                         
                         let homeViewVC = homeViewNaviVC.viewControllers.first as! HomeViewController
                         homeViewVC.vc = self
-                        homeViewVC.playerName = self.loginResult?.name
-                        homeViewVC.playerMoney = self.loginResult?.balance
+                        homeViewVC.playerName = self.loginResult?.user.name
+                        homeViewVC.playerMoney = self.loginResult?.user.balance
                         
                         self.present(homeViewNaviVC, animated: true)
                     }
@@ -95,7 +95,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func registerButton(_ sender: UIButton) {
         
-        let registerData = RegisterData(name: accountTextField.text!, password: passwordTextField.text!)
+        let registerData = ShouldPassRegisterData(name: accountTextField.text!, password: passwordTextField.text!)
         guard let uploadData = try? JSONEncoder().encode(registerData) else {
             return
         }
@@ -134,8 +134,8 @@ class LoginViewController: UIViewController {
                         
                         let homeViewVC = homeViewNaviVC.viewControllers.first as! HomeViewController
                         homeViewVC.vc = self
-                        homeViewVC.playerName = self.registerResult?.user[0].name
-                        homeViewVC.playerMoney = self.registerResult?.user[0].balance
+                        homeViewVC.playerName = self.registerResult?.user.name
+                        homeViewVC.playerMoney = self.registerResult?.user.balance
                         
                         self.present(homeViewNaviVC, animated: true)
                     }
@@ -147,14 +147,14 @@ class LoginViewController: UIViewController {
     
     func decodeData1(_ data: Data) {
         let decoder = JSONDecoder()
-        if let data = try? decoder.decode(LoginResult.self, from: data) {
+        if let data = try? decoder.decode(ReceiveLoginResult.self, from: data) {
             loginResult = data
         }
     }
     
     func decodeData2(_ data: Data) {
         let decoder = JSONDecoder()
-        if let data = try? decoder.decode(RegisterResult.self, from: data) {
+        if let data = try? decoder.decode(ReceiveRegisterResult.self, from: data) {
             registerResult = data
         }
     }

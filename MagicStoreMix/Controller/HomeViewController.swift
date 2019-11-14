@@ -63,7 +63,7 @@ class HomeViewController: UIViewController {
     }
     
     func addMoneyTip() {
-        let loginData = LoginData(name: "lacie", password: "lacie")
+        let loginData = ShouldPassLoginData(name: "lacie", password: "lacie")
         guard let uploadData = try? JSONEncoder().encode(loginData) else {
             return
         }
@@ -94,7 +94,7 @@ class HomeViewController: UIViewController {
                 self.decodeData(data)
                 
                 DispatchQueue.main.async {
-                    self.playerMoney = self.addMoney?.result[0].balance
+                    self.playerMoney = self.addMoney?.user.balance
                     self.moneyLabel.text = "$ \(self.playerMoney!)"
                 }
             }
@@ -110,3 +110,25 @@ class HomeViewController: UIViewController {
     }
 }
 
+//extension HomeViewController {
+//    
+//    func getMagicBookList() {
+//        
+//        let address = "https://35.221.143.0/api/items/all"
+//        if let url = URL(string: address) {
+//            URLSession.shared.dataTask(with: url) { (data, response, error) in
+//                if let error = error {
+//                    print("error: \(error.localizedDescription)")
+//                }
+//                guard let data = data else { return }
+//                if let response = response as? HTTPURLResponse {
+//                    print("status code: \(response.statusCode)")
+//                    if let magicData = try? JSONDecoder().decode(MagicBook.self, from: data) {
+//                        self.magicBook.bookLists = magicData.data
+//                    }
+//                }
+//            }.resume()
+//        }
+//        
+//    }
+//}

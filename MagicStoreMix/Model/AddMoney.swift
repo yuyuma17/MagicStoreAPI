@@ -10,12 +10,12 @@ import Foundation
 
 struct AddMoney: Codable {
     
-    let result: [returnResult]
+    let user: returnResult
     
 }
 
 struct returnResult: Codable {
     
-    var balance: Int
+    let balance: Int
     
 }
