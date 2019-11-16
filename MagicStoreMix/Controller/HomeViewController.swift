@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    let magicBook = AllMagicBooks.shared
+    
     var vc: LoginViewController?
     var playerName: String?
     var playerMoney: Int?
@@ -35,6 +37,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getAllMagicBook()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,25 +114,23 @@ class HomeViewController: UIViewController {
     }
 }
 
-//extension HomeViewController {
-//    
-//    func getMagicBookList() {
-//        
-//        let address = "https://35.221.143.0/api/items/all"
-//        if let url = URL(string: address) {
-//            URLSession.shared.dataTask(with: url) { (data, response, error) in
-//                if let error = error {
-//                    print("error: \(error.localizedDescription)")
-//                }
-//                guard let data = data else { return }
-//                if let response = response as? HTTPURLResponse {
-//                    print("status code: \(response.statusCode)")
-//                    if let magicData = try? JSONDecoder().decode(MagicBook.self, from: data) {
-//                        self.magicBook.bookLists = magicData.data
-//                    }
-//                }
-//            }.resume()
-//        }
-//        
-//    }
-//}
+extension HomeViewController {
+    
+    func getAllMagicBook() {
+        
+        if let url = URL(string: "http://vegelephant.club/api/shop/1?password=lacie&name=lacie") {
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    print("error: \(error.localizedDescription)")
+                }
+                guard let data = data else { return }
+                if let response = response as? HTTPURLResponse {
+                    print("status code: \(response.statusCode)")
+                    if let magicData = try? JSONDecoder().decode(AllMagicBookItems.self, from: data) {
+                        self.magicBook.allMagicBooks = magicData.magics
+                    }
+                }
+            }.resume()
+        }
+    }
+}
